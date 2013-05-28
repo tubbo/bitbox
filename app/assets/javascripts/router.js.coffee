@@ -1,3 +1,1 @@
-Bitbox.Router.map (match)->
-  # match('/').to('index')
-
+Bitbox.Router.map (match) ->

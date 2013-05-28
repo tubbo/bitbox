@@ -4,20 +4,21 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem "strong_parameters"
 gem "foreman"
-gem "haml-rails"
+gem "devise"
+gem "carrierwave"
 gem "draper"
 gem "active_model_serializers"
-gem 'jquery-rails'
-gem "foundation"
-gem "ember-rails"
-gem "carrierwave"
-gem "devise"
+gem "haml-rails"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
+  gem 'teabag'
+  gem 'jquery-rails'
+  gem "ember-rails"
+  gem "foundation"
 end
 
 group :development do
