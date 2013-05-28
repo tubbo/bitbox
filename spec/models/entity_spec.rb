@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe Entity do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "represents a file in the sync folder"
 end
