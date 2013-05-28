@@ -1,1 +1,2 @@
-Bitbox.Router.map (match) ->
+Bitbox.Router.map ->
+  @resource 'file_manager'

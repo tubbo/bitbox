@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Size</td>
+      <td>Last Modified</td>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each controller}}
+      <tr>
+        <td>{{ name }}</td>
+        <td>{{ size }}</td>
+        <td>{{ last_modified }}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
