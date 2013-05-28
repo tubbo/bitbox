@@ -10,6 +10,8 @@ gem "active_model_serializers"
 gem 'jquery-rails'
 gem "foundation"
 gem "ember-rails"
+gem "carrierwave"
+gem "devise"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

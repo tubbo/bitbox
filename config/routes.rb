@@ -1,4 +1,7 @@
 Bitbox::Application.routes.draw do
+  resources :entities
+
+
   devise_for :users
 
   # The priority is based upon order of creation:
