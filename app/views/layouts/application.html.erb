@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Bitbox</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <%= title_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield %>
 
-<%= yield %>
-
-  <%= javascript_include_tag "application" %>
-</body>
+    <%= javascript_include_tag 'application' %>
+  </body>
 </html>
