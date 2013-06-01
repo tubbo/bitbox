@@ -1,30 +1,45 @@
 require 'spec_helper'
-require 'digest'
 
 describe Folder do
-  let(:sync_folder) { Rails.application.config.sync_folder }
-  subject { Folder.new name: 'test' }
+  subject { Folder.new name: '~/Sync' }
 
   it "creates a new directory when one doesn't exist" do
-    subject.should be_valid
-    subject.secret.should be_present
-    File.exists?("#{sync_folder}/test").should be_true
+    expect(subject).to be_valid
+    expect(subject.secret).to be_present
+    expect(subject).to exist
   end
 
-  it "synchronizes with an existing directory" do
-    system "mkdir #{sync_folder}/test"
-
-    subject.should be_valid
-    subject.secret.should be_present
+  it "computes the base folder name" do
+    expect(subject.basename).to eq("Sync")
   end
 
-  it "synchronizes with an existing sync folder" do
-    secret_key = Digest::SHA256.new.digest "an existing secret key"
-    subject.secret = secret_key
-
-    subject.should be_valid
-    subject.secret.should == secret_key
+  it "expands the path of the given folder name" do
+    expect(subject.path).to eq(File.expand_path("~/Sync"))
   end
 
-  after { system "rm -rf #{sync_folder}/test" }
+  context "with an existing directory" do
+    before { system "mkdir -p #{subject.path}" }
+
+    it "generates a secret" do
+      expect(subject).to be_valid
+      expect(subject.secret).to_not be_blank
+    end
+  end
+
+  context "with an existing sync folder" do
+    let(:existing_secret) { subject.send(:generator).digest "an existing secret key" }
+    before { subject.secret = existing_secret }
+
+    it "can be assigned a secret" do
+      expect(subject).to be_valid
+      expect(subject.secret).to eq(existing_secret)
+    end
+
+    it "creates the folder" do
+      expect(subject).to be_valid
+      expect(subject).to exist
+    end
+  end
+
+  after { system "rm -rf #{subject.path}" if subject.exists? }
 end
