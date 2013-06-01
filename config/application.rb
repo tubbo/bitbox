@@ -27,5 +27,8 @@ module Bitbox
 
     config.action_mailer.default_url_options = { :host => 'localhost:3000' }
     config.ember.variant = :development
+
+    config.bitbox = ActiveSupport::OrderedOptions.new
+    config.bitbox.sync_folder = File.expand_path "~/Sync"
   end
 end
