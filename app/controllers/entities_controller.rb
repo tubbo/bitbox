@@ -1,9 +1,11 @@
 class EntitiesController < ApplicationController
   respond_to :json
   before_filter :authenticate_user!
+  before_filter :find_entity, only: [:show, :destroy]
 
   def index
-    @entities = Entity.where(searchable_params).order(searchable_params)
+    @entities = Entity.where searchable_params
+                      .order by_what_was_searched
 
     respond_with @entities
   end
@@ -39,10 +41,16 @@ private
   end
 
   def searchable_params
-    params.permit(:name, :path, :size, :last_modified_on)
+    params.permit(:name, :size, :last_modified_on)
+  end
+
+  def by_what_was_searched
+    searchable_params.keys.reduce { |query,param|
+      query += "#{param} "
+    }.strip
   end
 
   def creatable_params
-    params.require(:entity).permit(:name, :path, :size, :last_modified_at)
+    params.require(:entity).permit(:name, :size, :last_modified_at)
   end
 end
