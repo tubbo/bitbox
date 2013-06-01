@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe Folder do
-  subject { Folder.new name: '~/Sync' }
+  let(:folder_name) { 'SyncTest' }
+  subject { Folder.new name: "~/#{folder_name}" }
 
   it "creates a new directory when one doesn't exist" do
     expect(subject).to be_valid
@@ -10,11 +11,11 @@ describe Folder do
   end
 
   it "computes the base folder name" do
-    expect(subject.basename).to eq("Sync")
+    expect(subject.basename).to eq(folder_name)
   end
 
   it "expands the path of the given folder name" do
-    expect(subject.path).to eq(File.expand_path("~/Sync"))
+    expect(subject.path).to eq(File.expand_path("~/#{folder_name}"))
   end
 
   context "with an existing directory" do

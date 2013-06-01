@@ -1,11 +1,12 @@
 class EntitiesController < ApplicationController
   respond_to :json
   before_filter :authenticate_user!
+  before_filter :find_folder
   before_filter :find_entity, only: [:show, :destroy]
 
   def index
-    @entities = Entity.where searchable_params
-                      .order by_what_was_searched
+    @entities = Entity.where(searchable_params)
+                      .order(by_what_was_searched)
 
     respond_with @entities
   end
@@ -18,10 +19,6 @@ class EntitiesController < ApplicationController
     respond_with @entity
   end
 
-  def create
-    @entity = Entity.new creatable_params
-  end
-
   def destroy
     message = if @entity.destroy
       { notice: "Deleted '#{@entity.name}''" }
@@ -29,12 +26,19 @@ class EntitiesController < ApplicationController
       { alert: "Error: Could not delete, #{@entity.error_messages}" }
     end
 
-    redirect_to :index, message
+    redirect_to @folder
   end
 
 private
+  def find_folder
+    @folder = Folder.find params[:folder_id]
+
+    render 'errors/not_found', status: 404 and return \
+      unless @folder.present?
+  end
+
   def find_entity
-    @entity = Entity.find params[:id]
+    @entity = Entity.find(params[:id] || params[:entity_id])
 
     render 'errors/not_found', status: 404 and return \
       unless @entity.present?
@@ -45,12 +49,8 @@ private
   end
 
   def by_what_was_searched
-    searchable_params.keys.reduce { |query,param|
+    searchable_params.keys.reduce("") { |query,param|
       query += "#{param} "
     }.strip
-  end
-
-  def creatable_params
-    params.require(:entity).permit(:name, :size, :last_modified_at)
   end
 end

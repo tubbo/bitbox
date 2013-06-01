@@ -1,0 +1,3 @@
+example_text_file:
+  folder: sync_folder
+  name: 'example.txt'
