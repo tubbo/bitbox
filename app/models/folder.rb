@@ -29,7 +29,7 @@ private
   end
 
   def generate_secret
-    self.secret ||= generator.digest source_of_secret
+    self.secret ||= generator.digest "#{to_yaml}"
   end
 
   def create_folder
@@ -38,10 +38,6 @@ private
   end
 
   def generator
-    @digest_generator ||= Digest::SHA256.new
-  end
-
-  def source_of_secret
-    "#{self.name} #{self.created_at}"
+    @digest_generator ||= Digest::SHA1.new
   end
 end

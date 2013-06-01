@@ -36,7 +36,7 @@ class FoldersController < ApplicationController
   # DELETE /folders/1
   def destroy
     if @folder.destroy
-      redirect_to :index
+      redirect_to folders_path
     else
       render 'error', status: 406, alert: @folder.error_msgs
     end
