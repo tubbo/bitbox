@@ -1,4 +1,7 @@
 class Entity < ActiveRecord::Base
+  belongs_to :folder
+
+  validates :folder_id, presence: true
   validates :name, presence: true
 
   def file_name
@@ -6,7 +9,7 @@ class Entity < ActiveRecord::Base
   end
 
   def path
-    @file_path ||= file.path
+    @file_path ||= File.expand_path "#{folder.path}/#{name}"
   end
 
   def size
@@ -14,11 +17,11 @@ class Entity < ActiveRecord::Base
   end
 
   def last_modified_at
-    @last_modified_at ||= Date.parse file.last_modified
+    @last_modified_at ||= file.mtime
   end
 
 private
   def file
-    File.new name
+    @reference ||= File.stat path
   end
 end
