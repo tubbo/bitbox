@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    BtSync (0.3.2)
+      httparty
     actionmailer (3.2.13)
       actionpack (= 3.2.13)
       mail (~> 2.5.3)
@@ -102,6 +104,9 @@ GEM
     handlebars-source (1.0.0.rc4)
     hike (1.2.2)
     http_parser.rb (0.5.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.1)
     jammit (0.6.6)
       cssmin (>= 1.0.3)
@@ -123,6 +128,7 @@ GEM
     method_source (0.8.1)
     mime-types (1.23)
     multi_json (1.7.4)
+    multi_xml (0.5.4)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
     pg (0.15.1)
@@ -218,6 +224,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  BtSync
   active_model_serializers
   better_errors
   capybara

@@ -9,6 +9,7 @@ gem "carrierwave"
 gem "draper"
 gem "active_model_serializers"
 gem "haml-rails"
+gem 'BtSync' # <3 @ChrisMacNaughton
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
