@@ -8,7 +8,8 @@ class Folder < ActiveRecord::Base
 
   validates :name,    presence: true, uniqueness: true
   validates :secret,  presence: true
-  validate :existing_folder_is_directory
+  validate  :folder_is_directory
+  validate  :directory_was_synced
 
   alias_attribute :name, :basename
 
@@ -30,10 +31,13 @@ class Folder < ActiveRecord::Base
   end
 
 private
-  def existing_folder_is_directory
-    unless exists?
-      errors.add :base, "is not a directory" if File.directory?(path)
-    end
+  def folder_is_directory
+    errors.add :base, "is not a directory" if File.directory?(path)
+  end
+
+  def directory_was_synced
+    errors.add :directory, "could not be registered with BtSync" \
+      unless directory.present?
   end
 
   def generate_secret
