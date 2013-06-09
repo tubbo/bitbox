@@ -11,11 +11,13 @@ class Folder < ActiveRecord::Base
   validate  :folder_is_directory
   validate  :directory_was_synced
 
-  alias_attribute :name, :basename
-
   # Compute an absolute path to the folder.
   def path
     @path ||= File.expand_path name
+  end
+
+  def basename
+    @basename ||= File.basename path
   end
 
   # Test if the folder path exists on the host machine.
@@ -53,7 +55,7 @@ private
     `mkdir #{path}` == ""
   end
 
-  def register_with_sync
+  def populate_secret
     if directory.present? & secret.nil?
       self.secret = directory.secret
     else

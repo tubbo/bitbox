@@ -28,12 +28,15 @@ describe Folder do
   end
 
   context "with an existing sync folder" do
-    let(:existing_secret) { subject.send(:generator).digest "an existing secret key" }
-    before { subject.secret = existing_secret }
+    let(:existing_directory) { BtSync.new.add_folder folder_name }
+    before do
+      system "mkdir -p #{folder_name}"
+      subject.secret = existing_directory.secret
+    end
 
     it "can be assigned a secret" do
       expect(subject).to be_valid
-      expect(subject.secret).to eq(existing_secret)
+      expect(subject.secret).to eq(existing_directory.secret)
     end
 
     it "creates the folder" do
