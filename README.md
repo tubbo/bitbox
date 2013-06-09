@@ -4,12 +4,16 @@ A Dropbox-like frontend for BitTorrent Sync. Includes a file browser and
 the ability to share files on the Web with links generated from the
 read-only secret, as well as add new folders through a lovely web
 interface. A much better alternative to the existing BtSync web app,
-with some added security precautions to make sure exposing this app
-won't inadvertently expose your machine to security risks.
+with some added security precautions to make sure this app being
+publicly accessible won't inadvertently expose your machine to
+security risks.
 
-Since no official API has been released for BtSync.app, Bitbox is
-currently not available for non-Linux devices. You must have the Linux
-app installed and running, as it operates as a web service.
+Bitbox communicates with the BitTorrent Sync app via HTTP requests, and
+as such **is only available for the Linux platform**. That is, any OS
+that can run the [Linux BtSync app]() is capable of also running Bitbox.
+We accomplish communication with the app via the [BtSync
+gem](http://github.com/ChrisMacNaughton/BtSync) gem. Indeed, many
+features of this very app would be impossible without this tool.
 
 ## Requirements
 
