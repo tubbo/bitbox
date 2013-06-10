@@ -72,7 +72,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0.3)
-    ember-data-source (0.0.5)
+    ember-data-source (0.13)
       ember-source
     ember-rails (0.12.0)
       active_model_serializers
@@ -81,7 +81,7 @@ GEM
       ember-source (>= 1.0.0.rc2.2)
       execjs (>= 1.2)
       railties (>= 3.1)
-    ember-source (1.0.0.rc4)
+    ember-source (1.0.0.rc5)
       handlebars-source (= 1.0.0.rc4)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -102,7 +102,7 @@ GEM
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
     handlebars-source (1.0.0.rc4)
-    hike (1.2.2)
+    hike (1.2.3)
     http_parser.rb (0.5.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
@@ -127,7 +127,7 @@ GEM
       railties
     method_source (0.8.1)
     mime-types (1.23)
-    multi_json (1.7.4)
+    multi_json (1.7.6)
     multi_xml (0.5.4)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
