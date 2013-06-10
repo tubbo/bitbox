@@ -10,6 +10,7 @@ gem "draper"
 gem "active_model_serializers"
 gem "haml-rails"
 gem 'BtSync' # <3 @ChrisMacNaughton
+gem 'puma'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
