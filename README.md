@@ -29,21 +29,29 @@ pretty simple to install.
 
 Install dependencies first:
 
-  $ bundle install
+```bash
+$ bundle install
+```
 
 Then, create a user and database for this app:
 
-  $ createuser -s 'bitbox'
-  $ rake db:setup
+```bash
+$ createuser -s 'bitbox'
+$ rake db:setup
+```
 
 Now you're ready! Start the BTSync app and run:
 
-  $ rails server
+```bash
+$ rails server
+```
 
 You can optionally run our Foreman script that boots both apps at the
 same time:
 
-  $ foreman start
+```bash
+$ foreman start
+```
 
 ## Development
 
@@ -52,7 +60,8 @@ management, and Ember.js on the frontend for view control. We employ a
 combination of Ruby, CoffeeScript, Haml and Sass to build a slick UI for
 BitTorrent Sync clients. Our mission is to provide a secure and fast web
 client for Sync without interfering with the way the app works for
-normal clients.
+normal clients. We also use Zurb Foundation as a framework and general
+time-saver for our front-end styling.
 
 ### Contributing
 
