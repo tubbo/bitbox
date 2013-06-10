@@ -1,18 +1,23 @@
-h1 All folders
-
-table
-  thead
-    tr
-      td colspan="2"
-        button click="newFolder" New Folder
-    tr
-      td Name
-      td
-  tbody
-    each folders
-      tr data-id="#{id}"
-        td
-          a href="folders/#{id}" #{name}
-        td
-          button click="editFolder" Edit
-          button click="destroyFolder" Destroy
+#folders
+  .row
+    h2.subheader All folders
+  .row
+    table
+      thead
+        tr.buttons
+          td colspan="2"
+            linkTo folders.new
+              button New Folder
+        tr
+          th Name
+          th
+      tbody
+        each folders
+          tr data-id="#{id}"
+            td
+              a href="folders/#{id}" #{name}
+            td
+              linkTo folders.edit folder
+                button Edit
+              linkTo folders.destroy folder
+                button Destroy

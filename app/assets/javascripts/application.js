@@ -7,5 +7,5 @@
 //= require_self
 //= require bitbox
 
-Bitbox = Ember.Application.create();
 $(document).foundation();
+Bitbox = Ember.Application.create();

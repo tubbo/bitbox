@@ -1,5 +1,5 @@
 Bitbox::Application.routes.draw do
-  resources :folders, except: [:new, :edit, :update] do
+  resources :folders do
     resources :entities, except: [:edit, :update]
   end
 

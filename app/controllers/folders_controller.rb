@@ -11,6 +11,12 @@ class FoldersController < ApplicationController
     respond_with @folders
   end
 
+  def new
+    @folder = Folder.new
+
+    respond_with @folder
+  end
+
   # Show a sync folder and all Entities inside it.
   #
   # GET /folders/:id
