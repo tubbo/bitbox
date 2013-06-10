@@ -1,0 +1,18 @@
+h1 All folders
+
+table
+  thead
+    tr
+      td colspan="2"
+        button click="newFolder" New Folder
+    tr
+      td Name
+      td
+  tbody
+    each folders
+      tr data-id="#{id}"
+        td
+          a href="folders/#{id}" #{name}
+        td
+          button click="editFolder" Edit
+          button click="destroyFolder" Destroy

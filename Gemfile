@@ -20,7 +20,8 @@ group :assets do
   gem 'teabag'
   gem 'jquery-rails'
   gem "ember-rails"
-  gem "foundation"
+  gem "zurb-foundation"
+  gem 'emblem-rails'
 end
 
 group :development do
