@@ -1,8 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    BtSync (0.3.2)
+    BtSync (0.5.1)
       httparty
+      json
     actionmailer (3.2.13)
       actionpack (= 3.2.13)
       mail (~> 2.5.3)
