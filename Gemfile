@@ -19,7 +19,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'teabag'
   gem 'jquery-rails'
-  gem "ember-rails"
+  gem "ember-rails", github: 'tubbo/ember-rails', branch: 'idiomatic-coffee-generators'
+  gem 'handlebars-source', '1.0.0.rc3'
   gem "zurb-foundation"
   gem 'emblem-rails'
 end

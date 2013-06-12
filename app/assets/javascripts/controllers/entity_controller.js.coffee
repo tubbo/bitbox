@@ -1,4 +1,1 @@
-Bitbox.EntityController = Ember.Controller.extend({
-
-})
-
+class Bitbox.EntityController extends Ember.Controller
