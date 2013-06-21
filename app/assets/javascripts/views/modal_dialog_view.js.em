@@ -1,7 +1,7 @@
 class Bitbox.ModalDialogView extends Ember.View
   showModalBinding: 'controller.showModal'
 
-  + observes showModal
+  +observer showModal
   showModalChanged: ->
     if @showModal
       @$('.reveal-modal').reveal()

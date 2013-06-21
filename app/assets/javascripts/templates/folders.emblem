@@ -6,8 +6,7 @@
       thead
         tr.buttons
           td colspan="2"
-            linkTo folders.new
-              button New folder
+            button New folder
         tr
           th Name
           th

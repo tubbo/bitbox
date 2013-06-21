@@ -1,6 +1,6 @@
 class Bitbox.FoldersRoute extends Ember.Route
-  setupController: (controller,folder) ->
-    controller.title = "All Folders"
+  model: -> Bitbox.Folder.find()
   events:
     newFolder: (content, controller) ->
-      controller.reveal content
+      controller.content = content
+      controller.showModal = true
