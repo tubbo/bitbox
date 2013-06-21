@@ -56,12 +56,15 @@ $ foreman start
 ## Development
 
 Bitbox uses Rails for our backend API, Bundler for dependency
-management, and Ember.js on the frontend for view control. We employ a
-combination of Ruby, CoffeeScript, Haml and Sass to build a slick UI for
-BitTorrent Sync clients. Our mission is to provide a secure and fast web
+management, and Ember.js on the frontend. Because we are using Ember to
+develop the frontend portion of the app, we also employ
+[EmberScript][emsc] to write most of our JavaScript and [Emblem][emb]
+for our view templates. We also use Sass and [Zurb Foundation][fnd] to
+build a slick UI for BitTorrent Sync clients.
+
+Our mission is to provide a secure and fast web
 client for Sync without interfering with the way the app works for
-normal clients. We also use Zurb Foundation as a framework and general
-time-saver for our front-end styling.
+normal clients.
 
 ### Contributing
 
