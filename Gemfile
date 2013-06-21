@@ -12,6 +12,7 @@ gem 'jbuilder'
 gem "haml-rails"
 gem 'BtSync' # <3 @ChrisMacNaughton
 gem 'puma'
+gem 'high_voltage'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

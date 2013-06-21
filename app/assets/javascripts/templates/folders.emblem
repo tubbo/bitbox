@@ -6,7 +6,8 @@
       thead
         tr.buttons
           td colspan="2"
-            view Bitbox.NewFolderView
+            linkTo folders.new
+              button New folder
         tr
           th Name
           th

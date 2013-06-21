@@ -1,8 +1,8 @@
 class FoldersController < ApplicationController
-  respond_to :html, :json
-  before_filter :find_folder, except: [:index, :create]
+  respond_to :json
+  before_filter :find_folder, except: [:index, :new, :create]
 
-  # All folders listing. Base of the app.
+  # All folders.
   #
   # GET /
   def index
