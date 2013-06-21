@@ -1,0 +1,1 @@
+class Bitbox.ModalDialogController extends Ember.ObjectController

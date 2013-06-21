@@ -3,6 +3,7 @@ class EntitiesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_folder
   before_filter :find_entity, only: [:show, :destroy]
+  before_filter :redirect_non_json_requests
 
   def index
     @entities = Entity.where(searchable_params)
@@ -26,7 +27,7 @@ class EntitiesController < ApplicationController
       { alert: "Error: Could not delete, #{@entity.error_messages}" }
     end
 
-    redirect_to @folder
+    redirect_to @folder, message
   end
 
 private

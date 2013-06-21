@@ -1,6 +1,7 @@
 class FoldersController < ApplicationController
   respond_to :json
   before_filter :find_folder, except: [:index, :new, :create]
+  before_filter :redirect_non_json_requests
 
   # All folders.
   #
