@@ -31,7 +31,8 @@ end
 group :development do
   gem "better_errors"
   gem "meta_request"
-  gem 'chef', require: false
+  gem 'chef', '>= 0.10', require: false
+  gem 'librarian-chef', require: false
 end
 
 group :test do

@@ -4,10 +4,6 @@
 # Shamelessly stolen from http://github.com/ChrisMacNaughton/BtSync
 
 Vagrant.configure("2") do |config|
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
-
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "chef-11-omnibus-x86"
 
@@ -25,10 +21,6 @@ Vagrant.configure("2") do |config|
   # some recipes and/or roles.
   #
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = 'chef/cookbooks'
-    chef.add_recipe "build-essential"
-    chef.add_recipe "apt"
-    chef.add_recipe "btsync"
-    chef.add_recipe 'bitbox'
+    chef.add_role 'bitbox'
   end
 end

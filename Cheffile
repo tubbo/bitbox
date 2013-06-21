@@ -1,0 +1,9 @@
+site "http://community.opscode.com/api/v1"
+
+cookbook 'build-essential'
+cookbook 'apt'
+cookbook 'postgresql'
+cookbook 'btsync', path: 'chef/cookbooks/btsync'
+cookbook 'nginx'
+cookbook 'unicorn'
+cookbook 'rails_application'
