@@ -64,6 +64,8 @@ DEPENDENCIES
   apt (>= 0)
   btsync (>= 0)
   build-essential (>= 0)
+  nginx (>= 0)
   postgresql (>= 0)
   rails_application (>= 0)
+  unicorn (>= 0)
 
