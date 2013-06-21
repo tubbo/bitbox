@@ -8,6 +8,7 @@ gem "devise"
 gem "carrierwave"
 gem "draper"
 gem "active_model_serializers"
+gem 'jbuilder'
 gem "haml-rails"
 gem 'BtSync' # <3 @ChrisMacNaughton
 gem 'puma'

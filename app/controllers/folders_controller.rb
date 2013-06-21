@@ -58,8 +58,7 @@ private
 
   def find_folder
     @folder = Folder.find params[:id]
-
-    render 'error', status: 404, alert: "Folder not found." \
-      unless @folder.present?
+  rescue ActiveRecord::RecordNotFound
+    render 'error', status: 404, alert: "Folder not found."
   end
 end
