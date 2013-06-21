@@ -7,4 +7,4 @@ rescue LoadError => error
 end
 
 desc "Run all RSpec and Teabag tests"
-task :test => ['db:test:prepare', 'spec', 'teabag']
+task :test => ['db:test:prepare', 'spec', 'teaspoon']

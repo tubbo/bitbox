@@ -10,10 +10,10 @@ security risks.
 
 Bitbox communicates with the BitTorrent Sync app via HTTP requests, and
 as such **is only available for the Linux platform**. That is, any OS
-that can run the [Linux BtSync app]() is capable of also running Bitbox.
+that can run the [Linux BtSync app][bts] is capable of also running Bitbox.
 We accomplish communication with the app via the [BtSync
-gem](http://github.com/ChrisMacNaughton/BtSync) gem. Indeed, many
-features of this very app would be impossible without this tool.
+gem][gem] gem by [Chris MacNaughton][cmn]. Indeed, many features of this
+very app would be impossible without this tool.
 
 ## Requirements
 
@@ -66,6 +66,11 @@ Our mission is to provide a secure and fast web
 client for Sync without interfering with the way the app works for
 normal clients.
 
+### A note on running tests..
+
+Please make sure you have [PhantomJS][pjs] and [Istanbul][ist] installed
+before running `rake test`, as it also runs our JavaScript specs.
+
 ### Contributing
 
 Please make all contributions in the form of a Git or GitHub pull
@@ -75,3 +80,12 @@ underlying model functionality as well as its support classes must also
 be included. For front-end features, we require the use of Jasmine tests
 as well as Capybara features for proper regression and acceptance
 testing.
+
+[bts]: http://labs.bittorrent.com/experiments/sync.html
+[gem]: http://github.com/ChrisMacNaughton/BtSync
+[cmn]: http://chrismacnaughton.com
+[emsc]: http://emberscript.org
+[emb]: http://emblemjs.com
+[fnd]: http://foundation.zurb.com
+[pjs]: http://phantomjs.com
+[ist]: https://github.com/gotwarlost/istanbul
