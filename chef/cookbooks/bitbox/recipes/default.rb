@@ -1,13 +1,36 @@
-package "python-software-properties"
+include_recipe 'git'
+include_recipe 'puma'
 
-apt_repository "btsync" do
-  uri "http://ppa.launchpad.net/tuxpoldo/btsync/ubuntu"
-  distribution node['lsb']['codename']
-  components ["main"]
-  key "D294A752"
-  keyserver "keyserver.ubuntu.com"
-  notifies :run, resources(:execute => "apt-get update"), :immediately
+directory '/var/www/bitbox' do
+  user 'vagrant'
+  group 'vagrant'
+  mode 0755
+  action :create
 end
-package "btsync" do
+
+git '/var/www/bitbox' do
+  repository 'git://github.com/tubbo/bitbox.git'
+  action :sync
+end
+
+gem_package 'bundler' do
   action :install
+end
+
+bash "install gems" do
+  code %(
+    cd /var/www/bibox &&
+    bundle install --deployment --without=development,test
+  )
+end
+
+puma_config 'bitbox' do
+  environment node[:rails][:environment]
+  directory node[:rails][:directory]
+  bind node[:rails][:url]
+  monit false
+end
+
+service 'puma' do
+  action :start
 end

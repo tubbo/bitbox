@@ -9,6 +9,8 @@ recipe            "btsync", "installs Bitbox"
 
 depends "apt"
 depends "btsync"
+depends "puma"
+depends "git"
 
 %w{ ubuntu debian }.each do |os|
   supports os
