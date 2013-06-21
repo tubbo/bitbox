@@ -31,6 +31,7 @@ end
 group :development do
   gem "better_errors"
   gem "meta_request"
+  gem 'chef', require: false
 end
 
 group :test do
