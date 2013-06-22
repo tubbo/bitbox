@@ -1,1 +1,9 @@
-p Hello!
+form#new_folder action="/folders" method="POST"
+  fieldset
+    legend Sync a new folder
+    .row
+      Ember.TextField valueBinding="name" placeholder="Name"
+    .row
+      Ember.TextField valueBinding="secret" placeholder="Secret"
+    .row
+      button click="saveFolder" Save

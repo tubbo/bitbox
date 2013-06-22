@@ -6,7 +6,7 @@
       thead
         tr.buttons
           td colspan="2"
-            button New folder
+            button click="newFolder" New folder
         tr
           th Name
           th
@@ -20,3 +20,5 @@
                 button Edit
               linkTo folders.destroy folder
                 button Destroy
+#dialog.reveal-modal
+  view Bitbox.FoldersNewView
