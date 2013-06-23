@@ -15,7 +15,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    BtSync (0.5.1)
+    BtSync (0.6.1)
       httparty
       json
     actionmailer (3.2.13)
@@ -291,7 +291,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  BtSync
+  BtSync (~> 0.6.1)
   active_model_serializers
   better_errors
   capybara

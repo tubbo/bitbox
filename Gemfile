@@ -10,7 +10,7 @@ gem "draper"
 gem "active_model_serializers"
 gem 'jbuilder'
 gem "haml-rails"
-gem 'BtSync' # <3 @ChrisMacNaughton
+gem 'BtSync', "~> 0.6.1" # <3 @ChrisMacNaughton
 gem 'puma'
 gem 'high_voltage'
 
