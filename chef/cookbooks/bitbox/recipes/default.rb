@@ -20,7 +20,7 @@ end
 
 bash "install gems" do
   code %(
-    cd /var/www/bibox &&
+    cd /var/www/bitbox &&
     bundle install --deployment --without=development,test
   )
 end

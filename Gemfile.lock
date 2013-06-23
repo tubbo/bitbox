@@ -291,7 +291,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  BtSync (~> 0.6.1)
+  BtSync (~> 0.6)
   active_model_serializers
   better_errors
   capybara

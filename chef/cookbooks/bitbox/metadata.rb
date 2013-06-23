@@ -4,7 +4,7 @@ maintainer_email  "tubbo@psychedeli.ca"
 license           "MIT"
 description       "Installs Bitbox, an app for managing BitTorrent Sync"
 long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version           "0.0.1"
+version           "0.0.2"
 recipe            "btsync", "installs Bitbox"
 
 depends "apt"
