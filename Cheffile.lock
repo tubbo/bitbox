@@ -18,15 +18,21 @@ SITE
       apt (>= 0.0.0)
       build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
-    puma (0.1.1)
-      logrotate (>= 0.0.0)
-      monit (>= 0.0.0)
     runit (1.1.6)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
     windows (1.10.0)
       chef_handler (>= 0.0.0)
     yum (2.3.0)
+
+GIT
+  remote: https://github.com/ChrisMacNaughton/chef-puma.git
+  ref: master
+  sha: 6478c37878ed4ec54eb82b1f160e3047ca5cd632
+  specs:
+    puma (0.1.0)
+      logrotate (>= 0.0.0)
+      monit (>= 0.0.0)
 
 PATH
   remote: chef/cookbooks/bitbox

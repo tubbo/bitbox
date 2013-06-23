@@ -3,7 +3,7 @@ site "http://community.opscode.com/api/v1"
 cookbook 'build-essential'
 cookbook 'apt'
 cookbook 'postgresql'
-cookbook 'puma'
+cookbook 'puma', git: 'https://github.com/ChrisMacNaughton/chef-puma.git'
 cookbook 'git'
 cookbook 'btsync', path: 'chef/cookbooks/btsync'
 cookbook 'bitbox', path: 'chef/cookbooks/bitbox'

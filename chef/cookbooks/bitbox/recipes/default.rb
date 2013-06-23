@@ -1,19 +1,8 @@
 include_recipe 'git'
-
-link "/opt/ruby/bin/gem" do
-  to "/usr/local/bin/gem"
-end
-
 include_recipe 'puma'
 
-directory '/var/www' do
-  user 'vagrant'
-  group 'vagrant'
-  mode 0755
-  action :create
-end
-
 directory '/var/www/bitbox' do
+  recursive true
   user 'vagrant'
   group 'vagrant'
   mode 0755
