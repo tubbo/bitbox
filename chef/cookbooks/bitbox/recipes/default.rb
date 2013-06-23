@@ -1,6 +1,18 @@
 include_recipe 'git'
 include_recipe 'puma'
 
+execute "create_symlink" do
+  command "ln -s /opt/ruby/bin/gem /usr/local/bin/gem"
+  not_if { ::File.exists?("/usr/local/bin/gem")}
+end
+
+directory '/var/www' do
+  user 'vagrant'
+  group 'vagrant'
+  mode 0755
+  action :create
+end
+
 directory '/var/www/bitbox' do
   user 'vagrant'
   group 'vagrant'

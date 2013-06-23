@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
   # some recipes and/or roles.
   #
   config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = ['chef/cookbooks', 'cookbooks']
     chef.roles_path = 'chef/roles'
     chef.add_role 'bitbox'
   end
