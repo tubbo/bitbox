@@ -1,10 +1,10 @@
 include_recipe 'git'
-include_recipe 'puma'
 
-execute "create_symlink" do
-  command "ln -s /opt/ruby/bin/gem /usr/local/bin/gem"
-  not_if { ::File.exists?("/usr/local/bin/gem")}
+link "/opt/ruby/bin/gem" do
+  to "/usr/local/bin/gem"
 end
+
+include_recipe 'puma'
 
 directory '/var/www' do
   user 'vagrant'
