@@ -28,7 +28,7 @@ SITE
 GIT
   remote: https://github.com/ChrisMacNaughton/chef-puma.git
   ref: master
-  sha: e878ce1ecf9e4ce929a04ff39e70b8adc56c7b93
+  sha: 2bbc485b128c45f7d2082eab6817c01e2f47d4ba
   specs:
     puma (0.1.0)
       logrotate (>= 0.0.0)

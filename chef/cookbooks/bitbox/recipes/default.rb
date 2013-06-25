@@ -43,7 +43,9 @@ end
 gem_package 'nokogiri' do
   action :install
 end
-
+package "nodejs" do # @Tom, this is for you to not use rubyracer
+  action :install
+end
 bash "install gems" do
   code %(
     cd /var/www/bitbox &&
