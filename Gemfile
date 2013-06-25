@@ -13,7 +13,7 @@ gem "haml-rails"
 gem 'BtSync', "~> 0.6" # <3 @ChrisMacNaughton
 gem 'puma'
 gem 'high_voltage'
-
+gem "execjs"
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

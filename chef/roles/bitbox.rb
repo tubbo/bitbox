@@ -24,7 +24,9 @@ default_attributes \
   },
   puma: {
     socket_url: 'unix:///var/www/bitbox/tmp/puma.sock',
-    rubygems_location: '/opt/ruby/bin/gem'
+    rubygems_location: '/usr/bin/gem',
+    user: "vagrant",
+    bind_address: 'tcp://127.0.0.1:3000'
   },
   rails: {
     environment: 'development',

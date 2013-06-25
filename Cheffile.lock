@@ -28,7 +28,7 @@ SITE
 GIT
   remote: https://github.com/ChrisMacNaughton/chef-puma.git
   ref: master
-  sha: 6478c37878ed4ec54eb82b1f160e3047ca5cd632
+  sha: e878ce1ecf9e4ce929a04ff39e70b8adc56c7b93
   specs:
     puma (0.1.0)
       logrotate (>= 0.0.0)
@@ -37,7 +37,7 @@ GIT
 PATH
   remote: chef/cookbooks/bitbox
   specs:
-    bitbox (0.0.1)
+    bitbox (0.0.2)
       apt (>= 0.0.0)
       btsync (>= 0.0.0)
       git (>= 0.0.0)

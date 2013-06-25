@@ -303,6 +303,7 @@ DEPENDENCIES
   ember-rails!
   ember_script-rails
   emblem-rails
+  execjs
   foreman
   haml-rails
   handlebars-source (= 1.0.0.rc4)
