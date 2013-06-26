@@ -46,10 +46,34 @@ end
 package "nodejs" do # @Tom, this is for you to not use rubyracer
   action :install
 end
+user "bitbox" do
+  action :create
+  home '/home/bitbox'
+end
+postgres_user "bitbox" do
+  password "bitbox_user"
+  privelages \
+    superuser: true,
+    createdb: true,
+    login: true
+end
+postgres_database "bitbox_development" do
+  owner "bitbox"
+  encoding "utf8"
+  template "template0"
+  locale "en_US.UTF8"
+end
+postgres_database "bitbox_test" do
+  owner "bitbox"
+  encoding "utf8"
+  template "template0"
+  locale "en_US.UTF8"
+end
 bash "install gems" do
   code %(
     cd /var/www/bitbox &&
     bundle install --deployment --without=development,test
+    rake db:migrate
   )
 end
 

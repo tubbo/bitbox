@@ -9,17 +9,15 @@ run_list [
 ]
 default_attributes \
   postgresql: {
-    username: 'vagrant',
+    username: 'bitbox',
     superuser: true,
     createdb: true,
     login: true,
     pg_hba: [
-      "local  all   all                 trust",
-      "host   all   all   127.0.0.1/32  md5",
-      "host   all   all   ::1/128       md5"
+      {type: 'local', db: 'all', user: 'all', addr: nil, method: 'trust'}
     ],
     password: {
-      postgres: 'hehbebbeh'
+      postgres: '9678fd32f829d44e4eb45b0916b5adbc'
     }
   },
   puma: {

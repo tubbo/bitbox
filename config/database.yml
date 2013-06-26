@@ -18,7 +18,7 @@ development:
   database: bitbox_development
   pool: 5
   username: bitbox
-  password:
+  password: bitbox_user
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -44,7 +44,7 @@ test:
   database: bitbox_test
   pool: 5
   username: bitbox
-  password:
+  password: bitbox_user
 
 production:
   adapter: postgresql
