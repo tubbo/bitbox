@@ -28,6 +28,6 @@ default_attributes \
   },
   rails: {
     environment: 'development',
-    directory: '/var/www/bitbox',
+    directory: '/vagrant',
     url: 'http://127.0.0.1:3000'
   }

@@ -40,7 +40,6 @@ PATH
     bitbox (0.0.2)
       apt (>= 0.0.0)
       btsync (>= 0.0.0)
-      git (>= 0.0.0)
       puma (>= 0.0.0)
 
 PATH

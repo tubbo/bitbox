@@ -1,7 +1,7 @@
 # Bundler and RubyGems
 /.bundle
 /vendor/gems
-
+/vendor/bundle
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
@@ -25,3 +25,4 @@ coverage/
 /.vagrant
 /cookbooks
 *.DS_Store
+shared/
