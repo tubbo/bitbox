@@ -24,3 +24,4 @@ coverage/
 /spec/tmp/*
 /.vagrant
 /cookbooks
+*.DS_Store
