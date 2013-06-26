@@ -17,6 +17,7 @@ development:
   encoding: unicode
   database: bitbox_development
   pool: 5
+  host: localhost
   username: bitbox
   password: bitbox_user
 
@@ -43,6 +44,7 @@ test:
   encoding: unicode
   database: bitbox_test
   pool: 5
+  host: localhost
   username: bitbox
   password: bitbox_user
 
